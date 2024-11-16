@@ -12,41 +12,47 @@
 
   <!-- Product card -->
   <div class="content">
+    <div>
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </div>
+    <ng-container #detailsVCR>
+
+    </ng-container>
     <div class="grid" #grid>
-      <div class="grid__item">
-        <div class="product">
+      <div class="grid__item"  *ngFor="let product of products;let i= index" >
+        <div class="product" #productBG id="productBG{{i}}" (click)="open(i,productBG)" >
           <div class="product__bg"></div>
-          <img class="product__img" [src]="product.img" alt="img 01"/>
+          <img class="product__img" [src]="product.img" alt="img 01" 
+           #productIMG id="productIMG{{i}}"/>
           <h2 class="product__title" [innerHTML]="product.title"></h2>
           <h3 class="product__subtitle" [innerHTML]="product.subtitle"></h3>
-          <p class="product__description" [innerHTML]="product.description"></p>
           <div class="product__price" [innerHTML]="product.price"></div>
 
         </div>
       </div>
-      <div class="grid__item">
-        <div class="product">
-          <div class="product__bg"></div>
-          <img class="product__img" src="../../assets/img/2.png" alt="img 02"/>
-          <h2 class="product__title">Space Fantasy</h2>
-          <h3 class="product__subtitle">Danica Green</h3>
-          <p class="product__description">Man bun banjo pop-up meh hammock. Skateboard hammock tousled retro, etsy taiyaki narwhal gentrify fixie food truck microdosing sustainable dreamcatcher.</p>
-          <div class="product__price">$199</div>
-        </div>
-
-      </div>
     </div>
   </div>
   <ng-template #detailTemplate>
-    <div class="details">
-      <div class="details__bg details__bg--up" #bgup></div>
-      <div class="details__bg details__bg--down" #bgdown></div>
-      <img class="details__img" [src]="detail.img" alt="img 01" />
-      <h2 class="details__title" [innerHTML]="detail.title"></h2>
-      <h3 class="details__subtitle" [innerHTML]="detail.subtitle"></h3>
-      <div class="details__price" [innerHTML]="detail.price"></div>
-      <p class="details__description" [innerHTML]="detail.description"></p>
-      <button class="details__addtocart">Add to cart</button>
+
+    <div class="details" #details>
+      <button class="details__close" #detailclose 
+      (click)="close()">
+        <span style="letter-spacing: 1.5;">close</span>
+      </button>
+  
+      <div class="div__close" #divsplash>
+        <span style="color: #c74c4c;">x</span>
+      </div>
+      <div class="details__bg details__bg--up" #detailbgup
+      ></div>
+      <div class="details__bg details__bg--down" #detailbgdown></div>
+      <img class="details__img" [src]="detail.img" alt="img 01" #detailimg
+
+      />
+      <h2 class="details__title" [innerHTML]="detail.title" #detailtitle></h2>
+      <h3 class="details__subtitle" [innerHTML]="detail.subtitle" #detailsubtitle></h3>
+      <div class="details__price" [innerHTML]="detail.price" #detailprice ></div>
+      <button class="details__addtocart" #detailbutton>Add to Compare</button>
 
     </div>
   </ng-template>
