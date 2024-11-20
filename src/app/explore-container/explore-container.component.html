@@ -1,5 +1,45 @@
-
+<!-- 
   <div class="square-loader">
+    <label>vanakkam</label>
+  </div> -->
 
+
+
+  <div id="selectdiv">
+    <div>
+      <ion-row>
+        <ion-col size="8">
+          <label class="dealslabel">Exclusive deals for you</label>
+        </ion-col>
+
+        <ion-col  size="4" style="text-align: right; position: relative; left: -20px;">
+          <label class="seelabel" (click)="animateDynamic()">See All > </label>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="cardposarea-container">
+      <div class="cardposarea" *ngFor="let vehicleData of bikeMaster">
+        <app-vehicle-card [normalcard]="true" [vehicleMaster]="vehicleData"></app-vehicle-card>
+      </div>
+      <div style="padding-left: 30px;">
+
+      </div>
+    </div>
   </div>
 
+  <div class="dynamicdiv" id="dynamicdiv">
+    <div class="icondiv" (click)="dismissAnimation()">
+      <ion-icon class="iconsty" name="close-circle" ></ion-icon>
+    </div>
+    <div class="grid-container" [ngStyle]="gridStyle">
+      <div *ngFor="let vehicleData of bikeMaster" class="grid-item">
+        <div class="vehanicard" #templateList>
+          <app-vehicle-card [dynamicard]="true" [vehicleMaster]="vehicleData"></app-vehicle-card>
+        </div>
+      </div>
+      
+    </div>
+    <div style="height: 100px;">
+
+    </div>
+  </div>

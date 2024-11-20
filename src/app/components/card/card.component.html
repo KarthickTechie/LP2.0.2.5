@@ -1,0 +1,36 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col
+        size="6"
+        *ngFor="let temp of templates;"
+        #templateList >
+        <ion-item
+          class="ion-no-padding"
+          lines="none"
+          
+        >
+          <img style="height: auto; width: 50%;" [src]="temp.background" />
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <div>
+    <h1 class="numberrun" data-count="1000"></h1>
+  </div>
+
+</ion-content>
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3 class="animate-charcter">EKOSH</h3>
+    </div>
+  </div>
+</div> -->
+
+<div>
+  <h3 class="social">$ 789,657,474</h3>
+</div>
