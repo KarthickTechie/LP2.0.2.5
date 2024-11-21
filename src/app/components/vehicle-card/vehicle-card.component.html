@@ -1,0 +1,45 @@
+<div>
+  <div class="vehImageCard">
+    <div class="offersty" *ngIf="vehicleMaster.offer !== '0'">
+      <ion-text class="offtext">{{vehicleMaster.offer}}% </ion-text>
+      <ion-text class="offtext">OFF</ion-text>
+      <div class="ribbonDecoration left"></div>
+      <div class="ribbonDecoration right"></div>
+      <div class="ribbonDecoration left" style="left: 12px;"></div>
+      <div class="ribbonDecoration right" style="left:18px;"></div>
+      <div class="ribbonDecoration left" style="left: 24px;"></div>
+      <div class="ribbonDecoration right" style="left: 30px;"></div>
+    </div>
+
+    <div class="imgdiv">
+      <img class="imgsty" [src]=vehicleMaster.imgPath/>
+    </div>
+      
+    
+
+    <div style="position: absolute; top: 195px; width: 150px;">
+      <div style="width: 150px;">
+        <ion-row>
+          <ion-col size="10">
+            <ion-label class="rupeestyle">₹ {{vehicleMaster.OnRoadPrice}}</ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <!-- <div *ngIf="normalcard">
+              <ion-icon class="fuelStyle" style="left: 40px;" *ngIf="vehicleMaster.FuelType == 'Petrol'" src="assets/icon/fuelType/Petrol_fuel.svg"></ion-icon>
+              <ion-icon class="fuelStyle" style="left: 40px;" *ngIf="vehicleMaster.FuelType == 'Electric'" src="assets/icon/fuelType/Battery_fuel.svg"></ion-icon>
+            </div>
+        
+            <div *ngIf="dynamicard"> -->
+              <ion-icon class="fuelStyle" style="color: #005F6A;" *ngIf="vehicleMaster.FuelType == 'Petrol'" src="assets/icon/fuelType/Petrol_fuel.svg"></ion-icon>
+              <ion-icon class="fuelStyle" style="color: green;" *ngIf="vehicleMaster.FuelType == 'Electric'" src="assets/icon/fuelType/Battery_fuel.svg"></ion-icon>
+            <!-- </div> -->
+          </ion-col>
+        </ion-row>
+        
+      </div>
+      <div style="position: relative; top: 20px; width: 150px;" class="bikenamediv">
+        <ion-label class="animate-bikeName">{{vehicleMaster.Name}}</ion-label>
+      </div>
+    </div>
+  </div>
+</div>
