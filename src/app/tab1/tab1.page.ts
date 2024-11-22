@@ -30,4 +30,18 @@ export class Tab1Page {
     this.showProductDetails = e
   }
 
+  onContentScroll(event: any) {
+    // console.log("onContentScroll", event)
+    // if (event.detail.scrollTop >= 30) {
+    //   var headerDiv: any = document.getElementById('headerdiv');
+    //   headerDiv.style.transition = 'top 700ms';
+    //   headerDiv.style.top = '-150px';
+    // } else {
+    //   var headerDiv: any = document.getElementById('headerdiv');
+    //   headerDiv.style.transition = 'top 700ms';
+    //   headerDiv.style.top = '0px';
+    // } 
+   
+  }
+
 }

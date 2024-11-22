@@ -36,14 +36,14 @@ div#pill {
 
 .wrap {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
 }
 
 .wrap::before {
-  content: "";
+    content: "";
   position: absolute;
   border-color: #612248cc;
   border-style: solid;
@@ -53,6 +53,7 @@ div#pill {
   border-radius: 20px;
   padding: 0 0.5rem;
   transition: all 0.25s ease-in-out;
+
 }
 
 // .wrap:hover::before {
@@ -61,7 +62,7 @@ div#pill {
 // }
 
 .wrap.active::before{
-  left: -10%;
+  left: 0%;
   opacity: 1;
 
 }
@@ -72,6 +73,7 @@ div#pill {
   left: 35%;
   transition: all 0.3s;
   transition-delay: 0.1s;
+  font-size: 24px;
 }
 
 .wrap>ion-label {
@@ -84,21 +86,23 @@ div#pill {
 }
 
 .wrap.active>ion-icon {
-  left: 0%;
+  left: 0px;
   color: white;
+  font-size: 12px;
 }
 
 .wrap.active>ion-label {
   color: white;
   z-index: 1;
   opacity: 1;
-  left: -5%;
+  left: 0%;
+  margin-left: 5px;
 }
 
 
 
 ion-tab-bar {
-  width: calc(100% - 100px);
+  // width: calc(100% - 100px);
   z-index: 9999;
 }
 
@@ -305,3 +309,8 @@ ion-tab-bar {
     top: -8%;
   }
 }
+
+a.button-native{
+  padding-left:0px;
+  padding-right:0px;
+  }

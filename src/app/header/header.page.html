@@ -1,4 +1,5 @@
-<div class="cardbox">
+
+<div class="cardbox" id="headerdiv" #header>
   <div class="calender">
     <ion-icon aria-hidden="true" name="location" class="loc-icon"></ion-icon>
     <span class="text-1">17</span>
@@ -13,4 +14,6 @@
   <ion-icon name="person-circle"></ion-icon>
   </div>
   </div>
-  <app-search></app-search>
+  <div id="searchdiv" style="position: relative;">
+      <app-search (inputFocused)="onInputFocusReceived($event)"></app-search>
+  </div>

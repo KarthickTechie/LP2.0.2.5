@@ -27,6 +27,7 @@ export class TabsPage implements AfterViewInit {
     { name: "archive", label: "PDD" }
   ]
    toggleMenu = false;
+   closedModal = false;
   constructor(public anmiationCtrl: AnimationController) {
     addIcons({
       triangle, ellipse, square, ellipsisHorizontal, home, calendarNumber,
@@ -46,7 +47,9 @@ export class TabsPage implements AfterViewInit {
   tabChanged() {
 
     this.selectedTab = this.tabButtons.find(e => e.selected == true)?.tab as string
-    this.closeModal()
+    if(this.closedModal){
+      this.closeModal();
+    }
   }
 
   // setTransform() {
@@ -66,8 +69,10 @@ export class TabsPage implements AfterViewInit {
   openMore() {
     this.toggleMenu = !this.toggleMenu;
     if (this.toggleMenu) {
+      this.closedModal = true;
       this.openModal();
     } else {
+      this.closedModal = false;
       this.closeModal();
     }
   }
@@ -114,6 +119,7 @@ export class TabsPage implements AfterViewInit {
 
   closeModal() {
     this.toggleMenu = false;
+    this.closedModal = false;
     console.log('close modal');
     const container: any = document.querySelector(`.bottom-container`);
     if(container){

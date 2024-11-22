@@ -1,7 +1,7 @@
 
 
-<ion-content [fullscreen]="true">
-  <app-header 
+<ion-content [fullscreen]="true" scrollEvents="true" (ionScroll)='onContentScroll($event)'>
+  <app-header
   [style.opacity]="showAllProducts || showProductDetails ? '0' : '1' "></app-header>
   <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 <app-charts-section

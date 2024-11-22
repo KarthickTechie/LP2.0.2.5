@@ -22,6 +22,24 @@ export class HeaderPage {
 
   }
 
+  onInputFocusReceived(data: any) {
+    console.log('Data from child on input focus:', data);
+    if (data == false) {
+      var headerDiv: any = document.getElementById('headerdiv');
+      var searchDiv: any = document.getElementById('searchdiv');
+      headerDiv.style.transition = 'top 700ms';
+      searchDiv.style.transition = 'top 700ms';
+      headerDiv.style.top = '-80px';
+      searchDiv.style.top = '-80px';
+    } else {
+      var headerDiv: any = document.getElementById('headerdiv');
+      var searchDiv: any = document.getElementById('searchdiv');
+      headerDiv.style.transition = 'top 700ms';
+      searchDiv.style.transition = 'top 700ms';
+      headerDiv.style.top = '0px';
+      searchDiv.style.top = '0px';
+    }
+  }
   
 
 }
