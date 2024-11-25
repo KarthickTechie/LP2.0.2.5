@@ -24,6 +24,13 @@ app-charts-section{
 	transition: all 0.25s ease-in-out;
 }
 
+/*@media screen and (max-width:600px) {
+	.product-header{
+		top: 18vh;
+	}
+	
+}*/
+
 .product-header > h3{
 	grid-column: span 3;
     padding-left: 1rem;
@@ -45,7 +52,18 @@ app-charts-section{
 .product-expand{
 	transform: translateY(-38vh);
 }
-
+@media screen and (max-width:600px) {
+	.product-expand{
+		transform: translateY(-36vh);
+	}
+}
 .product-shrink{
-	transform: translateY(0);
+	transform: translateY(0vh);
+}
+
+@media screen and (max-width:600px) {
+	.product-shrink{
+		
+		transform: translateY(2vh);
+	}
 }

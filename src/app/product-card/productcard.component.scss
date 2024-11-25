@@ -16,6 +16,12 @@
 	overflow: scroll;
 }
 
+@media screen and (max-width:600px){
+	.grid{
+		margin-top: 4em;
+	}
+}
+
 .grid-12{
 	grid-template-columns: repeat(12,1fr) !important;
 }
@@ -92,6 +98,8 @@
 	align-items: flex-start;
 	pointer-events: auto;
 }
+
+
 
 .details--open {
 	pointer-events: auto;

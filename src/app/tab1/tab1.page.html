@@ -14,7 +14,7 @@
     <a (click)="showAll()">{{showAllProducts ? 'See Less' : 'See All'}}
       <!-- <ion-button fill="clear" (click)="showAll()">See All</ion-button> -->
     </a>
-  </div>
+  </div>   
   <app-product-card 
   [showAll]= "showAllProducts"
   (cardToggle)="onProductOpen($event)"
