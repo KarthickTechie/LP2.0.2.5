@@ -1,12 +1,11 @@
 <!-- Product card -->
 <div class="content" 
-[ngClass]="!showAll ? 'product-shrink' : 'product-expand' ">
+[ngClass]="!showAll ? 'product-shrink' : 'product-expand' "
+>
     <div>
       <ion-icon name="chevron-back-outline"></ion-icon>
     </div>
-    <ng-container #detailsVCR>
-
-    </ng-container>
+    
     <div class="grid" [ngClass]="!showAll ? 'grid-12': '' " #grid>
       <div class="grid__item"  *ngFor="let product of products;let i= index" >
         <div class="product" #productBG id="productBG{{i}}" (click)="open(i,productBG)" >
@@ -16,32 +15,38 @@
           <h2 class="product__title" [innerHTML]="product.title"></h2>
           <h3 class="product__subtitle" [innerHTML]="product.subtitle"></h3>
           <div class="product__price" [innerHTML]="product.price"></div>
-
         </div>
       </div>
     </div>
   </div>
-  <ng-template #detailTemplate>
 
+  <ng-container #detailsVCR>
+
+  </ng-container>
+
+  <ng-template #detailTemplate>
     <div class="details" #details>
       <button class="details__close" #detailclose 
       (click)="close()">
-        <span style="letter-spacing: 1.5;">close</span>
+        <span style="letter-spacing: 1.5;">close</span> 
       </button>
   
       <div class="div__close" #divsplash>
         <span style="color: #c74c4c;">x</span>
       </div>
+
       <div class="details__bg details__bg--up" #detailbgup
       ></div>
       <div class="details__bg details__bg--down" #detailbgdown></div>
-      <img class="details__img" [src]="detail.img" alt="img 01" #detailimg
-
-      />
+      
+      <img class="details__img" [src]="detail.img" alt="img 01" #detailimg/>
+      <div class="product_detail">
+        
       <h2 class="details__title" [innerHTML]="detail.title" #detailtitle></h2>
       <h3 class="details__subtitle" [innerHTML]="detail.subtitle" #detailsubtitle></h3>
       <div class="details__price" [innerHTML]="detail.price" #detailprice ></div>
+     
       <button class="details__addtocart" #detailbutton>Add to Compare</button>
-
+    </div>
     </div>
   </ng-template>

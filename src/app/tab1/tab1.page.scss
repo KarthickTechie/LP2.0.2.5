@@ -24,6 +24,13 @@ app-charts-section{
 	transition: all 0.25s ease-in-out;
 }
 
+@media screen and (max-width:600px) {
+	.product-header{
+		top: 18vh;
+	}
+	
+}
+
 .product-header > h3{
 	grid-column: span 3;
     padding-left: 1rem;
@@ -41,11 +48,27 @@ app-charts-section{
     pointer-events: all;
 	cursor: pointer;
 }
-
+/*.card_list{
+	position:absolute;
+	top:20vh;
+}*/
 .product-expand{
-	transform: translateY(-38vh);
+	position: absolute;
+	top:20px;
+}
+@media screen and (max-width:600px) {
+	.product-expand{
+		top:20px;
+	}
+}*
+.product-shrink{
+	
+	transform: translateY(0vh);
 }
 
-.product-shrink{
-	transform: translateY(0);
+@media screen and (max-width:600px) {
+	.product-shrink{
+		
+		transform: translateY(2vh);
+	}
 }

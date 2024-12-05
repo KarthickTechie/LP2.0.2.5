@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, Input } from '@angular/core';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { IonicModule } from '@ionic/angular';
 import { ChartsSectionComponent } from '../components/charts-section/charts-section.component';
@@ -16,11 +16,12 @@ import { ProductCardComponent } from '../product-card/productcard.component';
 export class Tab1Page {
   showAllProducts = false
   showProductDetails = false
+ 
   constructor() {
 
   }
 
-
+ 
   showAll(){
     this.showAllProducts = !this.showAllProducts
 
