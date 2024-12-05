@@ -78,7 +78,7 @@ export class ProductCardComponent{
 
   }
   open(i: number, vc: HTMLDivElement) {
-    console.log(i, this.products[i])
+    //console.log(i, this.products[i])
     this.cardToggle.emit(true)
     this.selectedHTMLElement = vc
     this.animeProps.isAnimating = true
@@ -94,6 +94,7 @@ export class ProductCardComponent{
       this.detailimg.nativeElement.style.transform = `translateX(${rect.productImgRect.left - rect.detailsImgRect.left}px) translateY(${rect.productImgRect.top - rect.detailsImgRect.top}px) scaleX(${rect.productImgRect.width / rect.detailsImgRect.width}) scaleY(${rect.productImgRect.height / rect.detailsImgRect.height})`;
       this.detailimg.nativeElement.style.opacity = '1'
 
+      
       anime({
         targets: [this.detailbgdown.nativeElement, this.detailimg.nativeElement],
         duration: (target, index) => index ? 800 : 250,
@@ -107,6 +108,12 @@ export class ProductCardComponent{
       });
 
       anime({
+        begin:async()=>{
+          const height = await window.screen.availHeight
+          const titleTopPosition = Math.ceil(rect.detailsTitleRect.top)
+          console.log(Math.round((titleTopPosition/height)*100))
+          console.log(`${JSON.stringify(rect.detailsTitleRect)} ---- $`)
+        },
         targets: [this.detailtitle.nativeElement],
         duration: 600,
         easing: 'easeOutExpo',
@@ -114,7 +121,7 @@ export class ProductCardComponent{
         translateY: '-50vh',
         translateX: [0, '35vw'],
         scale: [0.1, 1],
-        opacity: [0, 1]
+        opacity: [0, 1],
       });
 
       anime({
@@ -155,10 +162,11 @@ export class ProductCardComponent{
         duration: 600,
         easing: 'easeOutExpo',
         delay: 100,
-        translateY:   this.showAll ? '5vh' : '-30vh',
-        translateX: [0, '0vw'],
+        //translateY:   this.showAll ? '5vh' : '-30vh',
+        //translateX: [0, '0vw'],
         scale: [0.1, 1.1],
-        opacity: [0, 1]
+        opacity: [0, 1],
+        zindex:2000000
       });
 
 
@@ -201,12 +209,13 @@ export class ProductCardComponent{
     });
 
   }
-  getProductDetailsRect() {
+ getProductDetailsRect() {
     return {
       productBgRect: this.productBG.nativeElement.getBoundingClientRect(),
       detailsBgRect: this.detailbgdown.nativeElement.getBoundingClientRect(),
       productImgRect: this.productIMG.nativeElement.getBoundingClientRect(),
-      detailsImgRect: this.detailimg.nativeElement.getBoundingClientRect()
+      detailsImgRect: this.detailimg.nativeElement.getBoundingClientRect(),
+      detailsTitleRect: this.detailtitle.nativeElement.getBoundingClientRect(),
     };
 
 

@@ -1,12 +1,14 @@
 .content {
 	position: relative;
 	display: block;
-    margin-top: 10vh;
+    margin-top: 25vh;
     transform: translateY(0);
     transition: transform 0.25s 100ms ease-in-out;
 }
+
 .grid{
     display: grid;
+	top:-25px;
     grid-template-columns: repeat(2,1fr);
     margin: 2em auto 1em;
 	position: relative;
@@ -141,12 +143,22 @@
 	height: 60vh;
 	background: var(--details-bg-down);
 }
-
 .details__img {
 	position: absolute;
 	top: 10vh;
 	right: 10vw;
 	height: 80vh;
+}
+.product_detail{
+	top:0px;
+}
+@media screen and (max-height:740px){
+.product_detail {
+	top:67px
+}
+.details__img{
+	top:20vh;
+}
 }
 
 .details__bg,
@@ -239,5 +251,5 @@
 }
 
 .product-shrink{
-	transform: translateY(0);
+	top:-15vh;
 }

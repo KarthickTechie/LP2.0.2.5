@@ -8,14 +8,15 @@
 [style.opacity]="showAllProducts || showProductDetails ? '0' : '1' "></app-charts-section>
   <!-- Product card -->
   <div class="product-header" [ngClass]="showAllProducts ? 'product-expand' : 'product-shrink' "
-  [style.opacity]="showProductDetails ? '0' : '1' "
+  [style.opacity]="showProductDetails ? '0' : '1' " 
   >
     <h3>Explore All Vehicles</h3>
     <a (click)="showAll()">{{showAllProducts ? 'See Less' : 'See All'}}
       <!-- <ion-button fill="clear" (click)="showAll()">See All</ion-button> -->
     </a>
   </div>   
-  <app-product-card 
+
+  <app-product-card class="card_list"
   [showAll]= "showAllProducts"
   (cardToggle)="onProductOpen($event)"
   ></app-product-card>
